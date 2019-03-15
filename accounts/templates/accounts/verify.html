@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<br/>
+<h2><font color="CornflowerBlue ">Verification</font></h2>
+{% if error %}
+<font color="red">{{ error }}</font>
+<br />
+{% endif %}
+
+<form method="POST" action="{% url 'verify' %}">
+    {% csrf_token %}
+    <br/>
+    <br/>
+    Verify Code:
+    <br/>
+    <input type="password" name="verify_code"/>
+    <br/>
+    <br/>
+    <input class="btn btn-primary" type="submit" value="Confirm!"/>
+</form>
+
+{% endblock %}

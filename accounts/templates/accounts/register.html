@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+<br/>
+<h2><font color="CornflowerBlue ">Register</font></h2>
+{% if error %}
+<font color="red">{{ error }}</font>
+<br />
+{% endif %}
+
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    Name:
+    <br/>
+    <input type="text" name="name"/>
+    <br/>
+    <br/>
+    D.O.B:
+    <br/>
+    <input type="date" name="birthday"/>
+    <br/>
+    <br/>
+    Father's Name:
+    <br/>
+    <input type="text" name="father_name"/>
+    <br/>
+    <br/>
+    Address Line 1:
+    <br/>
+    <input type="text" name="address1"/>
+    <br/>
+    <br/>
+    Address Line 2:
+    <br/>
+    <input type="text" name="address2"/>
+    <br/>
+    <br/>
+    E-mail:
+    <br/>
+    <input type="email" name="username"/>
+    <br/>
+    <br/>
+    Password:
+    <br/>
+    <input type="password" name="password1"/>
+    <br/>
+    <br/>
+    Confirm Password:
+    <br/>
+    <input type="password" name="password2"/>
+    <br/>
+    <br/>
+    <input class="btn btn-primary" type="submit" value="Register!"/>
+</form>
+<br/>
+<br/>
+<p>Already Register? <font color="CornflowerBlue "><a  href="{% url 'login'%}">Login</a></font></p>
+
+{% endblock %}
