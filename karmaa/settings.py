@@ -92,16 +92,30 @@ WSGI_APPLICATION = 'karmaa.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'karmaa',
-        'USER': 'root',
-        'PASSWORD': '17081994',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+
+
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'karmaa',
+#         'USER': 'root',
+#         'PASSWORD': '17081994',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
